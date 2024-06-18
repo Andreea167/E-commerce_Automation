@@ -1,0 +1,17 @@
+{
+  "name": "e-commerce_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.13"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1"
+  }
+}
