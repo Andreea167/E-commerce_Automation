@@ -1,6 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test'
 
-/////////////////all goood
 
 export class PDP{
 
@@ -154,6 +153,12 @@ export class PDP{
         await this.page.waitForTimeout(1500);
         await expect(this.pricePrduct).toContainText('€');
             
+    }
+
+    async goToPDP()
+    {
+        await this.page.goto('https://demo.nopcommerce.com/htc-one-m8-android-l-50-lollipop');
+        expect(await this.page.url()).toBe('https://demo.nopcommerce.com/htc-one-m8-android-l-50-lollipop');
     }
 
 }

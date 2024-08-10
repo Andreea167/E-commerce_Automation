@@ -1,8 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test'
 import * as pw from 'playwright';
 
-//////////////////// all good
-
 export class CHECKOUT {
     readonly page: Page
   

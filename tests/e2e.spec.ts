@@ -1,7 +1,7 @@
 import { test, expect } from '../playwright/fixtures'
 
 
-test.use({ launchOptions: { slowMo: 1000 } })
+test.use({ launchOptions: { slowMo: 700 } })
 
 
 test(`[E2E-01] Flow 1: 
@@ -74,7 +74,7 @@ test(`[E2E-03] Flow 3:
     S1: Navigate to homepage -->
     S2: Search for HTC using Search Bar  -->
     S3: Navigate to the first PDP of the results  --> 
-    S4: Check adding the prod to favorite wll be on wishlist as well -->
+    S4: Check adding the prod to favorite will be on wishlist as well -->
     S5: Check going back redirect back to the PDP -->
     S6: Add produt to cart --> 
     S7: Navigat to checkout when not login -->
@@ -128,7 +128,7 @@ test(`[E2E-04] Flow 4:
     await login.goToRegisterPage()
     let emailGenerated = await  login.completeRegistrationPage();
 
-    await login.goToMyAccount();
+    await login.goToMyAccount()
     await login.goToChangePassword();
     await login.checkChangePassWorks();
     await page.reload();
@@ -146,12 +146,6 @@ test(`[E2E-04] Flow 4:
     await checkout.continueWithMoneyOrder()
     await checkout.confirmOrder();
 
-
-    ///the following 3 lines add them to a new e2e test, maybe email a fried or add new address on my account 
-    //as ideas of tests
-    await checkout.checkOrderNumberAppearOnTyPage();
-    await login.goToMyAccount();
-    await login.checkOrderNumberAppearOnMyAccountAsWell();
 });
 
 
@@ -161,7 +155,7 @@ test(`[E2E-05] Flow 5:
     S1: Navigate to register page -->
     S2: Create a new account  -->
     S3: Go to my account and add a new address  --> 
-    S4: Search for jeans using Searcg Bar --> 
+    S4: Search for jeans using Search Bar --> 
     S5: Navigate to first result -->
     S6: Navigate to checkout -->
     S7: Complete one pager when you aready have an address -->

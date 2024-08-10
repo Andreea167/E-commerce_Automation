@@ -4,10 +4,10 @@ import { faker } from '@faker-js/faker';
 
 export class LOGIN {
   readonly page: Page
-  readonly goToLoginBtn: Locator  //
-  readonly goToRegisterBtn: Locator //
+  readonly goToLoginBtn: Locator  
+  readonly goToRegisterBtn: Locator 
 
-  readonly mrCheckbox: Locator  //all paragraph good
+  readonly mrCheckbox: Locator  
   readonly firstName: Locator
   readonly lastName: Locator
   readonly emailInput: Locator
@@ -22,21 +22,21 @@ export class LOGIN {
   readonly logoutBtn: Locator
   readonly textEmailAlreadyExist: Locator;
 
-  readonly myAccountBtnFromHeader : Locator  //
-  readonly successNotif: Locator //
+  readonly myAccountBtnFromHeader : Locator  
+  readonly successNotif: Locator 
   readonly addNewAddressBtn: Locator
 
 
   constructor(page: Page) {
   this.page = page
-  this.goToLoginBtn=page.locator('a.ico-login') //*
-  this.goToRegisterBtn = page.locator('a.ico-register');  //
+  this.goToLoginBtn=page.locator('a.ico-login') 
+  this.goToRegisterBtn = page.locator('a.ico-register');  
 
 
-  this.mrCheckbox=page.locator('#gender-female');  //
+  this.mrCheckbox=page.locator('#gender-female');  
   
-  this.firstName=page.locator('#FirstName') //
-  this.lastName=page.locator('#LastName')  //
+  this.firstName=page.locator('#FirstName') 
+  this.lastName=page.locator('#LastName')  
   this.emailInput = page.locator('#Email')
   this.passInputRegistraation=page.locator('#Password');
   this.confirmPass = page.locator('#ConfirmPassword')
@@ -44,14 +44,14 @@ export class LOGIN {
 
   
 
-  this.loginEmail= page.locator('input#Email')  //
-  this.loginPass= page.locator('input#Password') //
-  this.loginBtn= page.locator('button.button-1.login-button'); //
-  this.logoutBtn=page.locator('a.ico-logout') //
+  this.loginEmail= page.locator('input#Email')  
+  this.loginPass= page.locator('input#Password') 
+  this.loginBtn= page.locator('button.button-1.login-button'); 
+  this.logoutBtn=page.locator('a.ico-logout') 
   this.textEmailAlreadyExist=page.locator('.signup-form p')
 
-  this.myAccountBtnFromHeader = page.locator('a.ico-account'); //
-  this.successNotif=page.locator('div.bar-notification.success');  //
+  this.myAccountBtnFromHeader = page.locator('a.ico-account'); 
+  this.successNotif=page.locator('div.bar-notification.success');  
   this.addNewAddressBtn = page.locator('button.add-address-button');
 
   }
@@ -80,7 +80,7 @@ export class LOGIN {
 }
 
 
-  async completeRegistrationPage()   //
+  async completeRegistrationPage()   
   {
     await this.mrCheckbox.click();
     
@@ -101,7 +101,7 @@ export class LOGIN {
     return randomEmail ;
   }
 
-  async checkLoginWithCorrectUserAndPass(email : string)  //
+  async checkLoginWithCorrectUserAndPass(email : string)  
   {
     await this.loginEmail.fill(email);
     await this.loginPass.fill('Test12345!');
@@ -112,7 +112,7 @@ export class LOGIN {
     
   }
 
-  async checkLoginWithWrongUserAndPass()  //
+  async checkLoginWithWrongUserAndPass()  
   {
     await this.loginEmail.fill('abc@gmail.ro');
     await this.loginPass.fill('Test');
@@ -130,7 +130,7 @@ export class LOGIN {
 
 
 
-  async goToMyAccount()   /// in joss good
+  async goToMyAccount()   
   {
     await expect(this.myAccountBtnFromHeader).toBeVisible( {timeout: 6000} )
     await this.myAccountBtnFromHeader.click();
@@ -170,7 +170,7 @@ export class LOGIN {
   }
 
 
-  async checkLoginWithNEWpass(email : string)  //
+  async checkLoginWithNEWpass(email : string)  
   {
     await this.loginEmail.fill(email);
     await this.loginPass.fill('New12345!');
@@ -182,7 +182,7 @@ export class LOGIN {
   }
   
 
-  async registerWithExistingEmail()   //
+  async registerWithExistingEmail()   
   {
     await this.mrCheckbox.click();
     

@@ -1,11 +1,11 @@
 import { test, expect } from '../playwright/fixtures'
 
-test.use({ launchOptions: { slowMo: 1000 } })
+test.use({ launchOptions: { slowMo: 700 } })
 
 test('[PLP-01] Check if the Add to Cart functionality works as expected for PLP ', async ({ page, checkout,  plp } ) => {
-  
-    await page.goto('https://demo.nopcommerce.com/books');
-    expect(await page.url()).toBe('https://demo.nopcommerce.com/books');
+   
+    await page.goto('https://demo.nopcommerce.com/awesome');
+    expect(await page.url()).toBe('https://demo.nopcommerce.com/awesome');
     
     await plp.checkAddARandomItemToCARTisAddedCorrectly();
 });
@@ -68,16 +68,7 @@ test('[PLP-07] Check if switching the price from USD to EURO works on PLP ',
      await page.goto('https://demo.nopcommerce.com/cell-phones');
      expect(await page.url()).toBe('https://demo.nopcommerce.com/cell-phones');
   
-      await page.route('**', route => {
-        route.continue(); 
-      });
-  
-     let requestCount = 0;
-     page.on("request", () => requestCount++);
-  
       await plp.checkSwitchFromUDStoEURwillSwitchAllPricesOnPLP();
-    
-     console.log("Number of requests made for add cart from PDP:", requestCount);
   });
 
 

@@ -81,7 +81,8 @@ test('[Login-07] Verify a user can NOT change the password if he enter the same 
 });
 
 
-test('[Login-08] Check that auser can add a new address via My Account' , async ({page, login}) => {
+test('[Login-08] Check that a user can add a new address via My Account' 
+    , async ({page, login}) => {
 
     await page.goto('https://demo.nopcommerce.com/')
     expect(await page.url()).toBe('https://demo.nopcommerce.com/');
@@ -94,13 +95,4 @@ test('[Login-08] Check that auser can add a new address via My Account' , async 
     await login.addNewAddress();
 
 })
-
-
-
-
-
-
-
-
-
 

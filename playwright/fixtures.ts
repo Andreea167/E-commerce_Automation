@@ -16,7 +16,6 @@ type MyFixtures = {
   pdp: PDP
   login: LOGIN
   checkout: CHECKOUT
-  
 }
 
 export const test = base.extend<MyOptions & MyFixtures>({
@@ -47,8 +46,5 @@ export const test = base.extend<MyOptions & MyFixtures>({
     await use(checkout)
   },
 
-  
-
-  
 })
 export { expect } from '@playwright/test'

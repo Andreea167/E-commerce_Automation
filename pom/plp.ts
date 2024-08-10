@@ -1,7 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test'
 
 
-//////////////////// ALL GOOD HERE
 
 export class PLP{
 
@@ -16,7 +15,6 @@ export class PLP{
     readonly addWishlistBtn: Locator  
     readonly viewWishlistBtn: Locator  
     readonly nameProduct: Locator    
-    
     readonly nameProductInCart: Locator;
 
     readonly searchBar: Locator
@@ -41,9 +39,7 @@ export class PLP{
 
         this.addWishlistBtn = page.locator('button.add-to-wishlist-button'); 
         this.viewWishlistBtn=page.locator('p.content a[href*="/wishlist"]')  
-
         this.nameProduct=page.locator('.product-title a'); 
-
         this.nameProductInCart=page.locator('a.product-name')  
 
         this.searchBar=page.locator('input#small-searchterms') 
@@ -128,6 +124,7 @@ export class PLP{
         await this.searchBar.fill(searchWord);
         await this.searchBtn.click();
 
+        await this.page.waitForLoadState()
         const numberProdAfterSearching = await this.nameProduct.count();
        
         for (let i=0; i < numberProdAfterSearching ; i++)
