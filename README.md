@@ -28,5 +28,5 @@ npm install
 # Install Playwright browsers
 npx playwright install
 
-Running Tests
+# Running Tests
 npx playwright test
