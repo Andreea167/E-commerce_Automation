@@ -1,4 +1,4 @@
-Playwright Test Automation Framework for a demo E-commerce
+# Playwright Test Automation Framework for a demo E-commerce 
 
 This project is a Playwright-based test automation framework built with TypeScript. It includes automated test cases for a demo E-commerce platform, covering key functionalities such as:
 Product Detail Page (PDP) tests
