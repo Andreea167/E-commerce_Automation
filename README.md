@@ -1,18 +1,18 @@
 # Playwright Test Automation Framework for a demo E-commerce 
 
 This project is a Playwright-based test automation framework built with TypeScript. It includes automated test cases for a demo E-commerce platform, covering key functionalities such as:
-Product Detail Page (PDP) tests
-Product Listing Page (PLP) tests
-Checkout flow tests
-Login page tests
-End-to-End (E2E) test scenarios
+- Product Detail Page (PDP) tests
+- Product Listing Page (PLP) tests
+- Checkout flow tests
+- Login page tests
+- End-to-End (E2E) test scenarios
 
-Prerequisites
+# Preparations
 Before running the tests, ensure that you have the following installed:
 
-Node.js (latest LTS version recommended)
-Playwright
-TypeScript
+- Node.js (latest LTS version recommended)
+- Playwright
+- TypeScript
 
 Installation
 To set up the project, clone the repository and install dependencies:
